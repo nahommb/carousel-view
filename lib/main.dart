@@ -21,21 +21,28 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(title: Text('Carousel View'),),
         body: SafeArea(
-          child: Container(
-            child: CarouselSlider(
-              items: [1,2,3,4,5,6,7,8,9].map((e){
-                return Container(
-                  color: Colors.deepPurpleAccent,
-                  width: 250,
-                  height: 50,
-                  child: Text('$e'),
-                );
-              }).toList(), options: CarouselOptions(
-              initialPage: 0,
-              autoPlay: true,
+          child: Column(
+            children: [
+              CarouselSlider(
+                items: [1,2,3,4,5,6,7,8,9].map((e){
+                  return Container(
+                    color: Colors.deepPurpleAccent,
+                    width: 250,
+                   //height: 100,
+                    child: Text('$e'),
+                  );
+                }).toList(),
+                options: CarouselOptions(
+                initialPage: 5,
+                autoPlay: true,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.3,
+                height: 100,
+                //animateToClosest: true
+              ),
+              ),
 
-            ),
-            ),
+            ],
           ),
         ),
       ),
